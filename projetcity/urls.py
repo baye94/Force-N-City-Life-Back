@@ -1,0 +1,30 @@
+from django.urls import path
+#from .views import ProduitListCreateAPIView,ProduitRetrieveUpdateDestroyAPIView
+from .views import *
+urlpatterns = [
+    #path('',api_views,name="api_views"),
+    path('api/produits/', ProduitListCreateAPIView.as_view(), name='api-produit-list-create'),
+    path('api/produits/<int:pk>/', ProduitRetrieveUpdateDestroyAPIView.as_view(), name='api-produit-retrieve-update-destroy'),
+    path('api/horaires/', HoraireListCreateAPIView.as_view(), name='api-horaire-list-create'),
+    path('api/horaires/<int:pk>/', HoraireRetrieveUpdateDestroyAPIView.as_view(), name='api-horaire-retrieve-update-destroy'),
+    path('api/commercelocaux/', CommerceLocauxListCreateAPIView.as_view(), name='api-commercelocaux-list-create'),
+    path('api/commercelocaux/<int:pk>/', CommerceLocauxRetrieveUpdateDestroyAPIView.as_view(), name='api-commercelocaux-retrieve-update-destroy'),
+    path('api/vehicules/', VehiculeListCreateAPIView.as_view(), name='api-vehicule-list-create'),
+    path('api/vehicules/<int:pk>/', VehiculeRetrieveUpdateDestroyAPIView.as_view(), name='api-vehicule-retrieve-update-destroy'),
+    path('api/chauffeurs/', ChauffeurListCreateAPIView.as_view(), name='api-chauffeur-list-create'),
+    path('api/chauffeurs/<int:pk>/', ChauffeurRetrieveUpdateDestroyAPIView.as_view(), name='api-chauffeur-retrieve-update-destroy'),
+    path('api/attractions/', AttractionListCreateAPIView.as_view(), name='api-attraction-list-create'),
+    path('api/attractions/<int:pk>/', AttractionRetrieveUpdateDestroyAPIView.as_view(), name='api-attraction-retrieve-update-destroy'),
+    path('api/categories/', CategorieListCreateAPIView.as_view(), name='api-categorie-list-create'),
+    path('api/categories/<int:pk>/', CategorieRetrieveUpdateDestroyAPIView.as_view(), name='api-categorie-retrieve-update-destroy'),
+    path('api/evenements/', EvenementListCreateAPIView.as_view(), name='api-evenement-list-create'),
+    path('api/evenements/<int:pk>/', EvenementRetrieveUpdateDestroyAPIView.as_view(), name='api-evenement-retrieve-update-destroy'),
+    path('api/hopitaux/', HopitalListCreateAPIView.as_view(), name='api-hopital-list-create'),
+    path('api/hopitaux/<int:pk>/', HopitalRetrieveUpdateDestroyAPIView.as_view(), name='api-hopital-retrieve-update-destroy'),
+    path('api/bibliotheques/', BibliothequeListCreateAPIView.as_view(), name='api-bibliotheque-list-create'),
+    path('api/bibliotheques/<int:pk>/', BibliothequeRetrieveUpdateDestroyAPIView.as_view(), name='api-bibliotheque-retrieve-update-destroy'),
+    path('api/centres-sociaux/', CentreSocialListCreateAPIView.as_view(), name='api-centre-social-list-create'),
+    path('api/centres-sociaux/<int:pk>/', CentreSocialRetrieveUpdateDestroyAPIView.as_view(), name='api-centre-social-retrieve-update-destroy'),
+    path('api/centres-informations/', CentreInformationListCreateAPIView.as_view(), name='api-centre-information-list-create'),
+    path('api/centres-informations/<int:pk>/', CentreInformationRetrieveUpdateDestroyAPIView.as_view(), name='api-centre-information-retrieve-update-destroy'),
+]
